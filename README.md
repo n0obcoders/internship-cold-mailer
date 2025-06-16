@@ -1,5 +1,5 @@
 # 📬 Internship Cold Email Sender (Streamlit App)
-
+https://internship-cold-mailer-tpdecviohhk9z5zawog3yz.streamlit.app/
 A web-based tool built with Streamlit to automate sending personalized cold emails for internship opportunities. You can select your desired domain, upload your resume, and instantly send internship requests to 5 random HRs from a verified list.
 
 ---
