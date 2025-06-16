@@ -16,6 +16,10 @@ hr_df = load_hr_data()
 
 # Title
 st.title("🚀 Internship Cold Email Sender")
+if st.button("🌐 Visit My Portfolio"):
+    st.markdown("Redirecting...")
+    st.markdown("[Click here if not redirected](https://portfolio-n0obcoders-projects.vercel.app/)", unsafe_allow_html=True)
+
 
 # Form inputs
 with st.form("email_form"):
@@ -75,7 +79,7 @@ Email: {email}
 
                 server.sendmail(email, row['Email'], msg.as_string())
                 st.success(f"✅ Email sent to {row['HR_Name']} at {row['Company_Name']}")
-                st.success(f"Visit my portfolio https://portfolio-n0obcoders-projects.vercel.app")
+                
             server.quit()
             st.balloons()
 
