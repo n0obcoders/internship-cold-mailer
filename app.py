@@ -75,7 +75,7 @@ Email: {email}
 
                 server.sendmail(email, row['Email'], msg.as_string())
                 st.success(f"✅ Email sent to {row['HR_Name']} at {row['Company_Name']}")
-                st.success(f"Visit my portfolio https://portfolio-n0obcoders-projects.vercel.app"
+                st.success(f"Visit my portfolio https://portfolio-n0obcoders-projects.vercel.app")
             server.quit()
             st.balloons()
 
