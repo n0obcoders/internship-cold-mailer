@@ -3,16 +3,27 @@ import pandas as pd
 import random
 import smtplib
 import os
+import io
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
+from cryptography.fernet import Fernet
 
-# Load HR contacts
-@st.cache_data
-def load_hr_data():
-    return pd.read_csv("hr_contacts.csv")
+# Securely load and decrypt HR data from encrypted CSV
+def load_encrypted_hr_data():
+    with open("key.key", "rb") as key_file:
+        key = key_file.read()
+    fernet = Fernet(key)
 
-hr_df = load_hr_data()
+    with open("hr_contacts_encrypted.csv", "rb") as enc_file:
+        decrypted_bytes = fernet.decrypt(enc_file.read())
+
+    decrypted_str = decrypted_bytes.decode()
+    csv_io = io.StringIO(decrypted_str)
+
+    return pd.read_csv(csv_io)
+
+hr_df = load_encrypted_hr_data()
 
 # Title
 st.title("🚀 Internship Cold Email Sender")
@@ -65,7 +76,7 @@ My name is {name}, and I am writing to express my interest in the {domain} posit
 
 {about}
 
-Please find my resume attached. I would be grateful for the opportunity to contribute to your team.
+
 
 Warm regards,
 {name}
