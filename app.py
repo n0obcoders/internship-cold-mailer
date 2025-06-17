@@ -76,7 +76,7 @@ My name is {name}, and I am writing to express my interest in the {domain} posit
 
 {about}
 
-
+Please find my resume attached. I would be grateful for the opportunity to contribute to your team.
 
 Warm regards,
 {name}
@@ -90,7 +90,7 @@ Email: {email}
 
                 server.sendmail(email, row['Email'], msg.as_string())
                 st.success(f"✅ Email sent to {row['HR_Name']} at {row['Company_Name']}")
-                
+
             server.quit()
             st.balloons()
 
