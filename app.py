@@ -1,6 +1,9 @@
 import streamlit as st
 
 st.title("🚀 Internship Cold Email Sender")
+if st.button("🌐 Visit My Portfolio"):
+    st.markdown("Redirecting...")
+    st.markdown("[Click here if not redirected](https://portfolio-n0obcoders-projects.vercel.app/)", unsafe_allow_html=True)
 
 name = st.text_input("Enter your full name")
 email = st.text_input("Enter your Gmail ID")
