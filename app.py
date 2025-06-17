@@ -28,7 +28,7 @@ with st.form("email_form"):
         "Android Developer Intern", "Web Developer Intern", "Digital Marketing Intern"
     ])
 
-    about = st.text_area("Tell us about yourself")
+    about = st.text_area("Tell us about yourself Dont enter your name just Pure details about you")
     resume = st.file_uploader("Upload Your Resume (PDF only)", type=["pdf"])
 
     submit = st.form_submit_button("Send Emails")
